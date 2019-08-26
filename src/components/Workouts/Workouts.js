@@ -26,7 +26,7 @@ class Workouts extends Component {
   render () {
     const workoutsJSX = this.state.workouts.map(workout => (
       <ListGroup.Item key={workout._id}>
-        <Link to={`/workouts/${workout._id}`}>{workout.title}</Link>
+        <Link to={`/workouts/${workout._id}`}>{workout.name}</Link>
       </ListGroup.Item>
     ))
 

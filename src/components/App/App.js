@@ -9,8 +9,11 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Workout from '../Workouts/Workout'
 import Workouts from '../Workouts/Workouts'
 import CreateWorkout from '../Workouts/CreateWorkout'
+import UpdateWorkout from '../Workouts/UpdateWorkout'
+import DeleteWorkout from '../Workouts/DeleteWorkout'
 
 class App extends Component {
   constructor () {
@@ -54,6 +57,31 @@ class App extends Component {
                 user={user}
                 alert={this.alert}
               />
+            )}
+          />
+          <Route
+            exact
+            path='/workouts/:id'
+            render={() => (
+              <Workout user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path="/workouts/:id/edit"
+            render={() => (
+              <UpdateWorkout
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
+          <Route
+            exact
+            path='/workouts/:id/delete'
+            render={() => (
+              <DeleteWorkout user={user} />
             )}
           />
           <Route path='/sign-up' render={() => (

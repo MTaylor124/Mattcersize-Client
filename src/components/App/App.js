@@ -9,6 +9,9 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Workouts from '../Workouts/Workouts'
+import CreateWorkout from '../Workouts/CreateWorkout'
+
 class App extends Component {
   constructor () {
     super()
@@ -42,6 +45,17 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/workouts' component={Workouts} />
+          <AuthenticatedRoute
+            user={user}
+            path="/createworkout"
+            render={() => (
+              <CreateWorkout
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />

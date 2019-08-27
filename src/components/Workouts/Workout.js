@@ -3,15 +3,16 @@ import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
+import WorkoutExercise from './WorkoutExercise'
+// import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 
 class Workout extends Component {
   state = {
-    workout: null
+    workout: ''
   }
 
   async componentDidMount () {
-    console.log(this.props.user)
     try {
       const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
 
@@ -55,6 +56,12 @@ class Workout extends Component {
               ? deletebutton
               : ''
             }
+            {this.state.workout.exercises.map(exId => (
+              <WorkoutExercise key={exId} id={exId}/>
+            ))}
+            <br/>
+            <Button href={`#workouts/${workout._id}/addexercise`}>add exercise</Button>
+            <br/>
           </Fragment>
         )}
       </div>

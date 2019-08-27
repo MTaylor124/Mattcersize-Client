@@ -9,7 +9,7 @@ const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
       <Form.Control
         name="name"
         type="text"
-        placeholder="name"
+        placeholder={new Date()}
         value={workout.name}
         onChange={handleChange}
         required

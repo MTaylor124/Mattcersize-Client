@@ -13,7 +13,11 @@ import Workout from '../Workouts/Workout'
 import Workouts from '../Workouts/Workouts'
 import CreateWorkout from '../Workouts/CreateWorkout'
 import UpdateWorkout from '../Workouts/UpdateWorkout'
-import DeleteWorkout from '../Workouts/DeleteWorkout'
+
+import Exercise from '../Exercises/Exercise'
+import Exercises from '../Exercises/Exercises'
+import CreateExercise from '../Exercises/CreateExercise'
+import UpdateExercise from '../Exercises/UpdateExercise'
 
 class App extends Component {
   constructor () {
@@ -48,7 +52,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
-          <Route exact path='/workouts' component={Workouts} />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/workouts' component={Workouts} />
           <AuthenticatedRoute
             user={user}
             path="/createworkout"
@@ -59,7 +65,8 @@ class App extends Component {
               />
             )}
           />
-          <Route
+          <AuthenticatedRoute
+            user={user}
             exact
             path='/workouts/:id'
             render={() => (
@@ -77,13 +84,38 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            exact
-            path='/workouts/:id/delete'
+
+          <AuthenticatedRoute exact path='/exercises' component={Exercises} />
+          <AuthenticatedRoute
+            user={user}
+            path='/workouts/:id/addexercise'
             render={() => (
-              <DeleteWorkout user={user} />
+              <CreateExercise
+                user={user}
+                alert={this.alert}
+              />
             )}
           />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/exercises/:id'
+            render={() => (
+              <Exercise user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path="/exercises/:id/edit"
+            render={() => (
+              <UpdateExercise
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
+
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />

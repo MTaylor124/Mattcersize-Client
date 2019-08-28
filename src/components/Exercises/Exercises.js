@@ -11,7 +11,7 @@ class Exercises extends Component {
     super()
 
     this.state = {
-      exercises: [],
+      exercises: null,
       isLoading: true
     }
   }
@@ -24,6 +24,9 @@ class Exercises extends Component {
     }
   }
   render () {
+    console.log('this is exercises', this.state.exercises)
+    const { exercise } = this.state
+
     const exercisesJSX = this.state.exercises.map(exercise => (
       <ListGroup.Item key={exercise.id}>
         <Link to={`/exercises/${exercise.id}`}>{exercise.name}</Link>
@@ -37,15 +40,16 @@ class Exercises extends Component {
         </div>
       )
     }
-
-    return (
-      <ListGroup>
-        {this.state.exercises.length
-          ? exercisesJSX
-          : <ListGroup.Item>No exercises found</ListGroup.Item>
-        }
-      </ListGroup>
-    )
+    if (exercise) {
+      return (
+        <ListGroup>
+          {this.state.exercises.length
+            ? exercisesJSX
+            : <ListGroup.Item>No exercises found</ListGroup.Item>
+          }
+        </ListGroup>
+      )
+    }
   }
 }
 

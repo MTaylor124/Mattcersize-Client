@@ -22,6 +22,7 @@ class CreateExercise extends Component {
   }
 
   handleExerciseSubmit = event => {
+    console.log('this is now state', this.state.exercise)
     event.preventDefault()
     axios({
       method: 'POST',

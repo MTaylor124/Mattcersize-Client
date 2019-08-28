@@ -39,7 +39,6 @@ const ExerciseForm = ({ exercise, handleChange, handleExerciseSubmit }) => (
       <Form.Label>Weight</Form.Label>
       <Form.Control
         name="weight"
-        type="number"
         placeholder="Optional: Weight"
         onChange={handleChange}
       />

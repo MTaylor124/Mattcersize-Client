@@ -19,14 +19,6 @@ class WorkoutExercise extends React.Component {
     }
   }
 
-  handleExerciseUpdate = () => {
-    event.preventDefault()
-    console.log('this is my exercise id', this.state.exercise._id)
-    // console.log('this is ')
-    // this.setState({
-    //   isEditing: true
-    // })
-  }
   handleExerciseDelete = () => {
     event.preventDefault()
     axios.delete(`${apiUrl}/exercises/${this.props.id}`,
@@ -41,26 +33,16 @@ class WorkoutExercise extends React.Component {
       .then(() => {
         this.props.handleRefresh()
       })
-      .catch(console.log)
+      .catch(console.log) // need to put something here
   }
 
   render () {
-    // let updateJSX
     const { exercise } = this.state
     const deletebutton = (
       <React.Fragment>
         <Button onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
       </React.Fragment>
     )
-    // const updatebutton = (
-    //   <React.Fragment>
-    //     <Button onClick={this.handleExerciseUpdate} size="sm">test edit</Button>
-    //   </React.Fragment>
-    // )
-    // <Button variant="outline-info" href={`#exercises/${this.state.exercise._id}/edit`} size="sm">actual edit</Button>
-    // if (this.state.isEditing) {
-    //   updateJSX = <ExerciseForm/>
-    // }
     if (exercise) {
       return (
         <React.Fragment>

@@ -24,7 +24,6 @@ class Exercises extends Component {
     }
   }
   render () {
-    console.log('this is exercises', this.state.exercises)
     const { exercise } = this.state
 
     const exercisesJSX = this.state.exercises.map(exercise => (

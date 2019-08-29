@@ -14,7 +14,6 @@ class UpdateExercise extends Component {
     axios(`${apiUrl}/exercises/${this.props.match.params.id}`)
       .then(response => {
         this.setState({ exercise: response.data.exercise })
-        console.log(response.data.exercise)
       })
       .catch(() => this.props.alert({
         heading: 'Error',
@@ -34,10 +33,6 @@ class UpdateExercise extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    console.log('user token', this.props.user.token)
-    console.log('exercise id', this.state.exercise._id)
-    console.log('exercise data', this.state.exercise)
-    console.log('this is for workout id', this.state.exercise.workout._id)
     axios({
       method: 'PATCH',
       url: `${apiUrl}/exercises/${this.state.exercise._id}`,

@@ -11,7 +11,6 @@ class Exercise extends Component {
   }
 
   async componentDidMount () {
-    console.log(this.props.user)
     try {
       const response = await axios(`${apiUrl}/exercises/${this.props.match.params.id}`)
 
@@ -24,7 +23,6 @@ class Exercise extends Component {
   }
   handleExerciseDelete = () => {
     event.preventDefault()
-    console.log('this is props id', this.props.id)
     axios.delete(`${apiUrl}/exercises/${this.props.match.params.id}`,
       {
         headers: {

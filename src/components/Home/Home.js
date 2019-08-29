@@ -20,6 +20,9 @@ const Home = props => {
   }
   return (
     <React.Fragment>
+      <br/>
+      <br/>
+      <br/>
       <h3 className="homepage-intro">Welcome to</h3>
       <h1 className="homepage-main">MATTCERSIZE</h1>
       <h3 className="homepage-intro-sub">Your simple workout tracking app</h3>

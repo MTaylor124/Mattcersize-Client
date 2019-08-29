@@ -3,7 +3,6 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 const Home = props => {
-  console.log(props)
   const { user } = props
   let seeWorkouts
   if (user) {

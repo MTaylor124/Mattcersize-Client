@@ -1,6 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
-.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton {
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise {
   display: flex;
   justify-content: center;
+}
+
+.updateExerciseButton, .exerciseDeleteButton {
+  float: right;
 }

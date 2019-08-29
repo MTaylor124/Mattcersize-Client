@@ -40,7 +40,7 @@ class WorkoutExercise extends React.Component {
     const { exercise } = this.state
     const deletebutton = (
       <React.Fragment>
-        <Button onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
+        <Button className="exerciseDeleteButton" onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
       </React.Fragment>
     )
     if (exercise) {
@@ -51,8 +51,10 @@ class WorkoutExercise extends React.Component {
           <span>sets: {this.state.exercise.sets} - </span>
           <span>reps: {this.state.exercise.reps} - </span>
           <span>weight: {this.state.exercise.weight} </span>
-          {exercise && <Button variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
           {deletebutton}
+          {exercise && <Button
+            className="updateExerciseButton"
+            variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
           <br/>
         </React.Fragment>
       )

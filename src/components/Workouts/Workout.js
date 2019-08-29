@@ -94,7 +94,7 @@ class Workout extends Component {
       if (addexercise) {
         updateExButton = (
           <Fragment>
-            <Button variant="outline-info" onClick={this.handleUpdate}>edit exercise</Button>
+            <Button className="updateExerciseButton" variant="outline-info" onClick={this.handleUpdate}>edit exercise</Button>
           </Fragment>
         )
       }
@@ -120,6 +120,7 @@ class Workout extends Component {
               {updateExButton}
               <br/>
               <Button
+                className="addExercise"
                 variant="outline-primary"
                 href={`#workouts/${workout._id}/addexercise`}>add exercise</Button>
               <br/>

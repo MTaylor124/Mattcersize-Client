@@ -5,6 +5,39 @@
   justify-content: center;
 }
 
-.updateExerciseButton, .exerciseDeleteButton {
+.setsreps, .exweight {
   float: right;
+}
+
+.exweightlabel {
+  font-size: 23px;
+}
+
+.lazyfix {
+  display: flex;
+  font-size: 10px;
+  justify-content: left;
+}
+
+.weightLine {
+  margin-bottom: 5px;
+}
+.updateExerciseButton, .exerciseDeleteButton {
+  display: flex;
+  justify-content: center;
+  float: left;
+  width: 50%;
+}
+
+.exercisefields {
+  font-size: 25px;
+}
+
+.exerciseName {
+  font-weight: 700;
+  font-size: 34px;
+}
+.flexButtons {
+  display: flex;
+  justify-content: center;
 }

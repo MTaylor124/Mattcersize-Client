@@ -47,14 +47,24 @@ class WorkoutExercise extends React.Component {
       return (
         <React.Fragment>
           <br/>
-          <span>{this.state.exercise.name} - </span>
-          <span>sets: {this.state.exercise.sets} - </span>
-          <span>reps: {this.state.exercise.reps} - </span>
-          <span>weight: {this.state.exercise.weight} </span>
-          {deletebutton}
-          {exercise && <Button
-            className="updateExerciseButton"
-            variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
+          <span className="exercisefields exerciseName">{this.state.exercise.name} </span>
+          <div className="setsreps">
+            <span className="exercisefields exsets"> {this.state.exercise.sets} x </span>
+            <span className="exercisefields exreps"> {this.state.exercise.reps} </span>
+          </div>
+          <div className="weightLine">
+            <br/>
+            <span className="exweightlabel">Weight:</span>
+            <span className="exercisefields exweight"> {this.state.exercise.weight}</span>
+            <br/>
+          </div>
+          <div className="lazyfix">Options:</div>
+          <div className="flexButtons">
+            {exercise && <Button
+              className="updateExerciseButton"
+              variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
+            {deletebutton}
+          </div>
           <br/>
         </React.Fragment>
       )

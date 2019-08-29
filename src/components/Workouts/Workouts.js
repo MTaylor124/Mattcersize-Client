@@ -42,7 +42,7 @@ class Workouts extends Component {
       <ListGroup>
         {this.state.workouts.length
           ? workoutsJSX
-          : <ListGroup.Item>No workouts found</ListGroup.Item>
+          : <ListGroup.Item>No workouts found, create one now!</ListGroup.Item>
         }
       </ListGroup>
     )

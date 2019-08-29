@@ -104,6 +104,12 @@ class Workout extends Component {
           </Fragment>
         )
       }
+      let exercisesStatus
+      if (!this.state.workout.exercises.length) {
+        exercisesStatus = (
+          <div className="noExercises">No exercises added yet. Add one now!</div>
+        )
+      }
       return (
         <div>
           { workout && (
@@ -133,6 +139,7 @@ class Workout extends Component {
                   alert={this.props.alert}
                 />
               ))}
+              {exercisesStatus}
               {updateExButton}
               <br/>
               <Button

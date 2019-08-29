@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main {
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main, .noExercises {
   display: flex;
   justify-content: center;
 }
@@ -17,11 +17,8 @@
 .backToWorkouts {
   display: table-cell;
   vertical-align: middle;
-  // margin: auto;
 }
-// .workoutName {
-//   display:
-// }
+
 
 .homepage-intro-sub {
   font-size: 15px;

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Button from 'react-bootstrap/Button'
-import ExerciseForm from './../Exercises/ExerciseForm'
+// import ExerciseForm from './../Exercises/ExerciseForm'
 class WorkoutExercise extends React.Component {
   state = {
     exercise: null,
@@ -21,7 +21,8 @@ class WorkoutExercise extends React.Component {
 
   handleExerciseUpdate = () => {
     event.preventDefault()
-    console.log('this is my update')
+    console.log('this is my exercise id', this.state.exercise._id)
+    // console.log('this is ')
     // this.setState({
     //   isEditing: true
     // })
@@ -44,22 +45,22 @@ class WorkoutExercise extends React.Component {
   }
 
   render () {
-    let updateJSX
+    // let updateJSX
     const { exercise } = this.state
     const deletebutton = (
       <React.Fragment>
         <Button onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
       </React.Fragment>
     )
-    const updatebutton = (
-      <React.Fragment>
-        <Button variant="outline-info" onClick={this.handleExerciseUpdate} size="sm">update exercise</Button>
-      </React.Fragment>
-
-    )
-    if (this.state.isEditing) {
-      updateJSX = <ExerciseForm/>
-    }
+    // const updatebutton = (
+    //   <React.Fragment>
+    //     <Button onClick={this.handleExerciseUpdate} size="sm">test edit</Button>
+    //   </React.Fragment>
+    // )
+    // <Button variant="outline-info" href={`#exercises/${this.state.exercise._id}/edit`} size="sm">actual edit</Button>
+    // if (this.state.isEditing) {
+    //   updateJSX = <ExerciseForm/>
+    // }
     if (exercise) {
       return (
         <React.Fragment>
@@ -68,9 +69,9 @@ class WorkoutExercise extends React.Component {
           <span>sets: {this.state.exercise.sets} - </span>
           <span>reps: {this.state.exercise.reps} - </span>
           <span>weight: {this.state.exercise.weight} </span>
-          {updatebutton} {deletebutton}
+          {exercise && <Button variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">actual edit</Button>}
+          {deletebutton}
           <br/>
-          {updateJSX}
         </React.Fragment>
       )
     }

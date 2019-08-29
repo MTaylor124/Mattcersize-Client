@@ -34,6 +34,10 @@ class UpdateExercise extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    console.log('user token', this.props.user.token)
+    console.log('exercise id', this.state.exercise._id)
+    console.log('exercise data', this.state.exercise)
+    console.log('this is for workout id', this.state.exercise.workout._id)
     axios({
       method: 'PATCH',
       url: `${apiUrl}/exercises/${this.state.exercise._id}`,
@@ -41,7 +45,13 @@ class UpdateExercise extends Component {
         'Authorization': `Bearer ${this.props.user.token}`
       },
       data: {
-        exercise: this.state.exercise
+        exercise: {
+          name: this.state.exercise.name,
+          sets: this.state.exercise.sets,
+          reps: this.state.exercise.reps,
+          weight: this.state.exercise.weight,
+          workout: this.state.exercise.workout._id
+        }
       }
     })
       .then(response => {
@@ -50,7 +60,7 @@ class UpdateExercise extends Component {
           message: 'You updated a exercise.',
           variant: 'success'
         })
-        this.props.history.push(`/exercises/${this.state.exercise._id}`)
+        this.props.history.push(`/workouts/${this.state.exercise.workout._id}`)
       })
       .catch(console.error)
   }
@@ -65,7 +75,7 @@ class UpdateExercise extends Component {
       <ExerciseForm
         exercise={this.state.exercise}
         handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
+        handleExerciseSubmit={this.handleSubmit}
       />
     )
   }

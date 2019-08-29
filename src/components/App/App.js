@@ -54,7 +54,12 @@ class App extends Component {
         <main className="container">
           <AuthenticatedRoute
             user={user}
-            exact path='/workouts' component={Workouts} />
+            exact path='/workouts' render={() => (
+              <Workouts
+                user={user}
+                alert={this.alert}
+              />
+            )}/>
           <AuthenticatedRoute
             user={user}
             path="/createworkout"

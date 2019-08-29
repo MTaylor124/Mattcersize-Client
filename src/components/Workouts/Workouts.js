@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import apiUrl from './../../apiConfig'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 // import Spinner from 'react-bootstrap/Spinner'
@@ -24,7 +24,7 @@ class Workouts extends Component {
     }
   }
   render () {
-    const workoutsJSX = this.state.workouts.map(workout => (
+    const workoutsJSX = this.state.workouts.filter(workout => workout.owner === this.props.user._id).map(workout => (
       <ListGroup.Item key={workout._id}>
         <Link to={`/workouts/${workout._id}`}>{workout.name}</Link>
       </ListGroup.Item>
@@ -49,4 +49,4 @@ class Workouts extends Component {
   }
 }
 
-export default Workouts
+export default withRouter(Workouts)

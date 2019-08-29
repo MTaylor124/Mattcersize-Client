@@ -14,7 +14,6 @@ class UpdateWorkout extends Component {
     axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
       .then(response => {
         this.setState({ workout: response.data.workout })
-        console.log(response.data.workout)
       })
       .catch(() => this.props.alert({
         heading: 'Error',

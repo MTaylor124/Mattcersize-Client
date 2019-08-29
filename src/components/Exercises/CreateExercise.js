@@ -22,6 +22,7 @@ class CreateExercise extends Component {
   }
 
   handleExerciseSubmit = event => {
+    console.log('user id', this.props.user._id)
     event.preventDefault()
     axios({
       method: 'POST',
@@ -35,7 +36,8 @@ class CreateExercise extends Component {
           sets: this.state.exercise.sets,
           reps: this.state.exercise.reps,
           weight: this.state.exercise.weight,
-          workout: this.props.match.params.id
+          workout: this.props.match.params.id,
+          owner: this.props.user._id
         }
       }
     })

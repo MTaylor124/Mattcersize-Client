@@ -57,7 +57,13 @@ class UpdateExercise extends Component {
         })
         this.props.history.push(`/workouts/${this.state.exercise.workout._id}`)
       })
-      .catch(console.error)
+      .catch(() => {
+        this.props.alert({
+          heading: 'Failure!!!!',
+          message: 'Could not update exercise, please add sets and reps.',
+          variant: 'failure'
+        })
+      })
   }
 
   render () {
@@ -66,14 +72,17 @@ class UpdateExercise extends Component {
         <h1>Loading... </h1>
       )
     }
+    const theRoute = this.state.exercise.workout._id
     return (
       <ExerciseForm
         exercise={this.state.exercise}
         handleChange={this.handleChange}
         handleExerciseSubmit={this.handleSubmit}
+        correctRoute={theRoute}
       />
     )
   }
 }
+// correctRoute={this.props.match.params.id}
 
 export default withRouter(UpdateExercise)

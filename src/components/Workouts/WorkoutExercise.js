@@ -33,7 +33,20 @@ class WorkoutExercise extends React.Component {
       .then(() => {
         this.props.handleRefresh()
       })
-      .catch(console.log) // need to put something here
+      .then(response => {
+        this.props.alert({
+          heading: 'Success!',
+          message: 'Successfully deleted Exercise',
+          variant: 'warning'
+        })
+      })
+      .catch(() => {
+        this.props.alert({
+          heading: 'Failure!!!!',
+          message: 'Could not delete exercise',
+          variant: 'danger'
+        })
+      })
   }
 
   render () {

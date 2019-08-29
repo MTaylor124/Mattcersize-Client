@@ -24,7 +24,7 @@ class Workouts extends Component {
     }
   }
   render () {
-    const workoutsJSX = this.state.workouts.filter(workout => workout.owner === this.props.user._id).map(workout => (
+    const workoutsJSX = this.state.workouts.reverse().filter(workout => workout.owner === this.props.user._id).map(workout => (
       <ListGroup.Item key={workout._id}>
         <Link to={`/workouts/${workout._id}`}>{workout.name}</Link>
       </ListGroup.Item>

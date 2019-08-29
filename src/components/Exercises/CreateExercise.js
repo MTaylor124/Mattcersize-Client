@@ -48,7 +48,13 @@ class CreateExercise extends Component {
         })
         this.props.history.push(`/workouts/${this.props.match.params.id}/`)
       })
-      .catch(console.error)
+      .catch(() => {
+        this.props.alert({
+          heading: 'Failure!!!!',
+          message: 'Could not create exercise, please add sets and reps.',
+          variant: 'danger'
+        })
+      })
   }
 
   render () {
@@ -57,6 +63,7 @@ class CreateExercise extends Component {
         exercise={this.state.exercise}
         handleChange={this.handleChange}
         handleExerciseSubmit={this.handleExerciseSubmit}
+        correctRoute={this.props.match.params.id}
       />
     )
   }

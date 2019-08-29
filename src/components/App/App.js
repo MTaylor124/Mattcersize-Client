@@ -76,7 +76,8 @@ class App extends Component {
             exact
             path='/workouts/:id'
             render={() => (
-              <Workout user={user} />
+              <Workout user={user}
+                alert={this.alert} />
             )}
           />
           <AuthenticatedRoute
@@ -107,7 +108,8 @@ class App extends Component {
             exact
             path='/exercises/:id'
             render={() => (
-              <Exercise user={user} />
+              <Exercise user={user}
+                alert={this.alert} />
             )}
           />
           <AuthenticatedRoute

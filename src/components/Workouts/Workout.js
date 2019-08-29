@@ -15,7 +15,6 @@ class Workout extends Component {
     exercises: null,
     addingExercise: false
   }
-
   async componentDidMount () {
     try {
       const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
@@ -80,6 +79,13 @@ class Workout extends Component {
           workout: this.state.workout
         }
       })
+      .then(response => {
+        this.props.alert({
+          heading: 'Success!!!!',
+          message: 'You deleted a workout.',
+          variant: 'warning'
+        })
+      })
       .then(() => this.props.history.push('/workouts'))
   }
   render () {
@@ -104,7 +110,8 @@ class Workout extends Component {
             <Fragment>
               <h1>{workout.name}</h1>
               {(this.props.user && workout) && this.props.user._id === workout.owner
-                ? <Button variant="outline-info" size="sm" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
+                ? <Button variant="outline-info"
+                  size="sm" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
                 : ''
               } -
               {(this.props.user && workout) && this.props.user._id === workout.owner
@@ -115,7 +122,10 @@ class Workout extends Component {
                 <WorkoutExercise key={ex.name + ex._id}
                   handleRefresh={this.handleRefresh}
                   user={this.props.user}
-                  id={ex._id}/>
+                  id={ex._id}
+                  thisstate={this.state}
+                  alert={this.props.alert}
+                />
               ))}
               {updateExButton}
               <br/>

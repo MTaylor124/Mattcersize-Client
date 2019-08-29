@@ -25,7 +25,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
     <Navbar.Brand href="#">
       Mattcersize
     </Navbar.Brand>

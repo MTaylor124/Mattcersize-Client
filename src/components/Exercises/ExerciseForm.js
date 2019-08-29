@@ -2,7 +2,10 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const ExerciseForm = ({ exercise, handleChange, handleExerciseSubmit }) => (
+// const logthis = () => {
+//   console.log(this.props)
+// }
+const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubmit }) => (
   <Form onSubmit={handleExerciseSubmit}>
     <Form.Group controlId="name">
       <Form.Label>Exercise:</Form.Label>
@@ -22,7 +25,6 @@ const ExerciseForm = ({ exercise, handleChange, handleExerciseSubmit }) => (
         type="number"
         placeholder="sets"
         onChange={handleChange}
-        required
       />
     </Form.Group>
     <Form.Group controlId="reps">
@@ -32,7 +34,6 @@ const ExerciseForm = ({ exercise, handleChange, handleExerciseSubmit }) => (
         type="number"
         placeholder="reps"
         onChange={handleChange}
-        required
       />
     </Form.Group>
     <Form.Group controlId="weight">
@@ -45,6 +46,9 @@ const ExerciseForm = ({ exercise, handleChange, handleExerciseSubmit }) => (
     </Form.Group>
     <Button variant="primary" type="submit">
       Submit
+    </Button>
+    <Button variant="danger" href={`#workouts/${correctRoute}`}>
+      Back
     </Button>
   </Form>
 )

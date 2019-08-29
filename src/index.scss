@@ -1,1 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton {
+  display: flex;
+  justify-content: center;
+}

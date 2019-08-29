@@ -9,6 +9,7 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Home from '../Home/Home'
 import Workout from '../Workouts/Workout'
 import Workouts from '../Workouts/Workouts'
 import CreateWorkout from '../Workouts/CreateWorkout'
@@ -120,7 +121,11 @@ class App extends Component {
               />
             )}
           />
-
+          <Route exact path='/' user={user}
+            render={() => (
+              <Home user={user} />
+            )}
+          />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />

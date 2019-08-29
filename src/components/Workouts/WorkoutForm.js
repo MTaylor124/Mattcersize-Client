@@ -19,6 +19,9 @@ const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
     <Button variant="primary" type="submit">
       Submit
     </Button>
+    <Button variant="danger" href={`#workouts/${workout._id}`}>
+      Back
+    </Button>
   </Form>
 )
 

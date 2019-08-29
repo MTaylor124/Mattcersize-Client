@@ -29,7 +29,6 @@ class Workouts extends Component {
         <Link to={`/workouts/${workout._id}`}>{workout.name}</Link>
       </ListGroup.Item>
     ))
-
     if (this.state.isLoading) {
       return (
         <div className="text-center">
@@ -38,13 +37,22 @@ class Workouts extends Component {
       )
     }
 
+    // let noWorkouts
+    // if (!this.state.workouts.length) {
+    //   noWorkouts = (
+    //     <div>No workouts found. Create one now!</div>
+    //   )
+    // }
+    // {noWorkouts}
     return (
-      <ListGroup>
-        {this.state.workouts.length
-          ? workoutsJSX
-          : <ListGroup.Item>No workouts found, create one now!</ListGroup.Item>
-        }
-      </ListGroup>
+      <React.Fragment>
+        <ListGroup>
+          {this.state.workouts.length
+            ? workoutsJSX
+            : <h1 className="noWorkoutsFound">No workouts found, Create one now!</h1>
+          }
+        </ListGroup>
+      </React.Fragment>
     )
   }
 }

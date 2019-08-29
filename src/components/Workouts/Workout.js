@@ -108,7 +108,13 @@ class Workout extends Component {
         <div>
           { workout && (
             <Fragment>
-              <h1>{workout.name}</h1>
+              <div className="workoutHeader">
+                <h1 className="workoutName">{workout.name}</h1>
+                <Button
+                  className="backToWorkouts"
+                  variant="outline-primary"
+                  href={'#workouts/'}>Back to Workouts</Button>
+              </div>
               {(this.props.user && workout) && this.props.user._id === workout.owner
                 ? <Button variant="outline-info"
                   size="sm" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>

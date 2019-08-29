@@ -14,14 +14,14 @@ const Home = props => {
   } else {
     seeWorkouts = (
       <React.Fragment>
-        <p className="see-workouts">Log in to access your workouts!</p>
+        <p className="see-workouts">Log in to access your workouts.</p>
       </React.Fragment>
     )
   }
   return (
     <React.Fragment>
-      <h1 className="homepage-intro">Welcome to Mattcersize</h1>
-      <br/>
+      <h3 className="homepage-intro">Welcome to</h3>
+      <h1 className="homepage-main">MATTCERSIZE</h1>
       <h3 className="homepage-intro-sub">Your simple workout tracking app</h3>
       <br/>
       <br/>

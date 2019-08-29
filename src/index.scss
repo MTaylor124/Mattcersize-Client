@@ -1,8 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 
-.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise {
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main {
   display: flex;
   justify-content: center;
+}
+
+.homepage-main {
+  font-size: 50px;
+}
+
+.homepage-intro-sub {
+  font-size: 15px;
 }
 
 .setsreps, .exweight {

@@ -87,14 +87,14 @@ class Workout extends Component {
     if (workout) {
       const deletebutton = (
         <Fragment>
-          <Button variant="outline-danger" onClick={this.handleDelete}> Delete Workout</Button>
+          <Button variant="outline-danger" size="sm" onClick={this.handleDelete}> Delete Workout</Button>
         </Fragment>
       )
       let updateExButton
       if (addexercise) {
         updateExButton = (
           <Fragment>
-            <Button variant="outline-info" onClick={this.handleUpdate}>update exercise</Button>
+            <Button variant="outline-info" onClick={this.handleUpdate}>edit exercise</Button>
           </Fragment>
         )
       }
@@ -104,7 +104,7 @@ class Workout extends Component {
             <Fragment>
               <h1>{workout.name}</h1>
               {(this.props.user && workout) && this.props.user._id === workout.owner
-                ? <Button variant="outline-info" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
+                ? <Button variant="outline-info" size="sm" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
                 : ''
               } -
               {(this.props.user && workout) && this.props.user._id === workout.owner

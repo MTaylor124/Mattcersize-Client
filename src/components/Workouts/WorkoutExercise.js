@@ -51,7 +51,7 @@ class WorkoutExercise extends React.Component {
           <span>sets: {this.state.exercise.sets} - </span>
           <span>reps: {this.state.exercise.reps} - </span>
           <span>weight: {this.state.exercise.weight} </span>
-          {exercise && <Button variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">actual edit</Button>}
+          {exercise && <Button variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
           {deletebutton}
           <br/>
         </React.Fragment>

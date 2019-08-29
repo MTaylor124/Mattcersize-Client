@@ -29,7 +29,6 @@ class Workout extends Component {
   }
 
   handleRefresh = async () => {
-    console.log('handle refresh ran')
     try {
       const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
 
@@ -84,22 +83,30 @@ class Workout extends Component {
       .then(() => this.props.history.push('/workouts'))
   }
   render () {
-    const { workout } = this.state
+    const { workout, addexercise } = this.state
     if (workout) {
       const deletebutton = (
         <Fragment>
-          <Button variant="outline-danger" onClick={this.handleDelete}>Delete Workout</Button>
+          <Button variant="outline-danger" onClick={this.handleDelete}> Delete Workout</Button>
         </Fragment>
       )
+      let updateExButton
+      if (addexercise) {
+        updateExButton = (
+          <Fragment>
+            <Button variant="outline-info" onClick={this.handleUpdate}>update exercise</Button>
+          </Fragment>
+        )
+      }
       return (
         <div>
           { workout && (
             <Fragment>
               <h1>{workout.name}</h1>
               {(this.props.user && workout) && this.props.user._id === workout.owner
-                ? <Button href={`#workouts/${workout._id}/edit`}>Edit Workout</Button>
+                ? <Button variant="outline-info" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
                 : ''
-              }
+              } -
               {(this.props.user && workout) && this.props.user._id === workout.owner
                 ? deletebutton
                 : ''
@@ -110,8 +117,10 @@ class Workout extends Component {
                   user={this.props.user}
                   id={ex._id}/>
               ))}
+              {updateExButton}
               <br/>
               <Button
+                variant="outline-primary"
                 href={`#workouts/${workout._id}/addexercise`}>add exercise</Button>
               <br/>
             </Fragment>

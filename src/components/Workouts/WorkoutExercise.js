@@ -22,20 +22,12 @@ class WorkoutExercise extends React.Component {
   handleExerciseUpdate = () => {
     event.preventDefault()
     console.log('this is my update')
-    this.setState({
-      isEditing: true
-    })
-    // axios.update
+    // this.setState({
+    //   isEditing: true
+    // })
   }
   handleExerciseDelete = () => {
     event.preventDefault()
-    // const idToDelete = this.props.id
-    // console.log('this is my starting array', this.state.exercise.workout.exercises)
-    // const currentExercises = this.state.exercise.workout.exercises
-    // const updatedExercises = currentExercises.filter(ex => ex !== idToDelete)
-    // console.log('this is my updated array', updatedExercises)
-    // console.log('this is the id getting deleted', idToDelete)
-
     axios.delete(`${apiUrl}/exercises/${this.props.id}`,
       {
         headers: {
@@ -56,12 +48,12 @@ class WorkoutExercise extends React.Component {
     const { exercise } = this.state
     const deletebutton = (
       <React.Fragment>
-        <Button onClick={this.handleExerciseDelete}>Delete</Button>
+        <Button onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
       </React.Fragment>
     )
     const updatebutton = (
       <React.Fragment>
-        <Button onClick={this.handleExerciseUpdate}>Update</Button>
+        <Button variant="outline-info" onClick={this.handleExerciseUpdate} size="sm">update exercise</Button>
       </React.Fragment>
 
     )
@@ -75,9 +67,8 @@ class WorkoutExercise extends React.Component {
           <span>{this.state.exercise.name} - </span>
           <span>sets: {this.state.exercise.sets} - </span>
           <span>reps: {this.state.exercise.reps} - </span>
-          <span>weight: {this.state.exercise.weight}</span>
-          {updatebutton}
-          {deletebutton}
+          <span>weight: {this.state.exercise.weight} </span>
+          {updatebutton} {deletebutton}
           <br/>
           {updateJSX}
         </React.Fragment>

@@ -33,10 +33,10 @@ class Workouts extends Component {
       )
     }
 
-    let noWorkouts
+    // let noWorkouts
     if (this.state.workouts.length === 0) {
-      noWorkouts = (
-        <h1 className="noWorkoutsFound">No workouts found. Create one now!!</h1>
+      return (
+        <h1 className="noWorkoutsFound">No workouts found. Create one now!!!</h1>
       )
     }
     // {noWorkouts}
@@ -48,9 +48,9 @@ class Workouts extends Component {
             : <h1 className="noWorkoutsFound">No workouts found, Create one now!</h1>
           }
         </ListGroup>
-        {noWorkouts}
       </React.Fragment>
     )
+    // {noWorkouts}
   }
 }
 

@@ -29,4 +29,19 @@ Users can create workouts and add resistance training exercises to them and trac
 In the event of a bug or issue:
   1. Console logging out state and props as needed to understand what information
      was being sent between states
-  2. Following data between props 
+  2. Pair programming
+
+## Git / Version Control
+1. Committed back end after successful CRUD test with curl scripts
+2. Committed front end after addition of every successful CRUD test
+3. Committed each additional functional component
+
+### Technologies Used
+- JavaScript
+- React
+- React-bootstrap
+- Express
+- axios
+- MongoDB
+- Mongoose
+- 

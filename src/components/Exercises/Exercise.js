@@ -11,15 +11,11 @@ class Exercise extends Component {
   }
 
   async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/exercises/${this.props.match.params.id}`)
+    const response = await axios(`${apiUrl}/exercises/${this.props.match.params.id}`)
 
-      this.setState({
-        exercise: response.data.exercise
-      })
-    } catch (error) {
-      console.error(error)
-    }
+    this.setState({
+      exercise: response.data.exercise
+    })
   }
   handleExerciseDelete = () => {
     event.preventDefault()

@@ -16,12 +16,8 @@ class Workouts extends Component {
     }
   }
   async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/workouts`)
-      this.setState({ workouts: response.data.workouts, isLoading: false })
-    } catch (error) {
-      console.error(error)
-    }
+    const response = await axios(`${apiUrl}/workouts`)
+    this.setState({ workouts: response.data.workouts, isLoading: false })
   }
   render () {
     const workoutsJSX = this.state.workouts.reverse().filter(workout => workout.owner === this.props.user._id).map(workout => (

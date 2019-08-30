@@ -15,11 +15,6 @@ class UpdateWorkout extends Component {
       .then(response => {
         this.setState({ workout: response.data.workout })
       })
-      .catch(() => this.props.alert({
-        heading: 'Error',
-        message: 'Something went wrong',
-        variant: 'danger'
-      }))
   }
 
   handleChange = event => {
@@ -51,7 +46,13 @@ class UpdateWorkout extends Component {
         })
         this.props.history.push(`/workouts/${this.state.workout._id}`)
       })
-      .catch(console.error)
+      .catch(() => {
+        alert({
+          heading: 'failure',
+          message: 'Could not update workout',
+          variant: 'danger'
+        })
+      })
   }
 
   render () {

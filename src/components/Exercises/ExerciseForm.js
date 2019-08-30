@@ -2,9 +2,6 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-// const logthis = () => {
-//   console.log(this.props)
-// }
 const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubmit }) => (
   <Form onSubmit={handleExerciseSubmit}>
     <Form.Group controlId="name">

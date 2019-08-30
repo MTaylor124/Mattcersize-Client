@@ -41,7 +41,13 @@ class CreateWorkout extends Component {
         })
         this.props.history.push(`/workouts/${response.data.workout._id}`)
       })
-      .catch(console.error)
+      .catch(() => {
+        alert({
+          heading: 'Failure',
+          message: 'Failed to create workout',
+          variant: 'danger'
+        })
+      })
   }
 
   render () {

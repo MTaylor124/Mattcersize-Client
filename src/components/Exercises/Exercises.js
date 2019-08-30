@@ -16,12 +16,8 @@ class Exercises extends Component {
     }
   }
   async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/exercises`)
-      this.setState({ exercises: response.data.exercises, isLoading: false })
-    } catch (error) {
-      console.error(error)
-    }
+    const response = await axios(`${apiUrl}/exercises`)
+    this.setState({ exercises: response.data.exercises, isLoading: false })
   }
   render () {
     const { exercise } = this.state

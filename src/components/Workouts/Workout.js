@@ -16,27 +16,19 @@ class Workout extends Component {
     addingExercise: false
   }
   async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
+    const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
 
-      this.setState({
-        workout: response.data.workout
-      })
-    } catch (error) {
-      console.error(error)
-    }
+    this.setState({
+      workout: response.data.workout
+    })
   }
 
   handleRefresh = async () => {
-    try {
-      const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
+    const response = await axios(`${apiUrl}/workouts/${this.props.match.params.id}`)
 
-      this.setState({
-        workout: response.data.workout
-      })
-    } catch (error) {
-      console.error(error)
-    }
+    this.setState({
+      workout: response.data.workout
+    })
   }
 
   handleExerciseSubmit = event => {
@@ -65,7 +57,13 @@ class Workout extends Component {
         })
         this.props.history.push(`/workouts/${this.props.match.params.id}/`)
       })
-      .catch(console.error)
+      .catch(() => {
+        alert({
+          heading: 'failure',
+          message: 'Could not create exercise',
+          variant: 'danger'
+        })
+      })
   }
 
   handleDelete = () => {

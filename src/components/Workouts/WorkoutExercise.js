@@ -9,14 +9,10 @@ class WorkoutExercise extends React.Component {
     isEditing: false
   }
   async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/exercises/${this.props.id}`)
-      this.setState({
-        exercise: response.data.exercise
-      })
-    } catch (error) {
-      console.error(error)
-    }
+    const response = await axios(`${apiUrl}/exercises/${this.props.id}`)
+    this.setState({
+      exercise: response.data.exercise
+    })
   }
 
   handleExerciseDelete = () => {

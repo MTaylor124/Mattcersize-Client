@@ -135,6 +135,10 @@ workout and would like to keep track of that number over time
 | Update | PATCH     |    update | /exercises/:id |
 | Delete | DELETE     |    destroy | /exercises/:id |
 
+### Front Page
+
+![Front page of Mattcersize](https://imgur.com/a/kzTQcAs)
+
 ### ERD
 
 ![ERD](https://imgur.com/a/vhYn2GE)

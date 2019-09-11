@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import Home from '../Home/Home'
+import About from '../Home/About'
 import Workout from '../Workouts/Workout'
 import Workouts from '../Workouts/Workouts'
 import CreateWorkout from '../Workouts/CreateWorkout'
@@ -129,6 +130,9 @@ class App extends Component {
             )}
           />
           <Route path='/about'
+            render={() => (
+              <About/>
+            )}
           />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />

@@ -8,29 +8,64 @@ $danger: gray;
   justify-content: center;
 }
 
+.mycentered {
+  display: flex;
+  justify-content: center;
+}
 body {
   background: #edf5f3;
+}
+
+.about-back {
+  display: flex;
+  justify-content: center;
+  float: right;
+  height: 60px;
+  width: 100px;
+  align-items: center;
+  font-size: 2em;
+  margin: 8px;
+}
+.about-headers {
+  align-items: top;
+  margin: 0;
+}
+.about-all {
+  padding: 0;
+}
+.about-header1, .about-header2 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.about-header1 {
+  margin-top: -20px;
+}
+.about-header2 {
+  margin-top: -15px;
+}
+.about-body {
+padding-top: 50px;
+padding-bottom: 60px;
 }
 .workouts-list {
   background-color: #8f9492;
 }
-// .workouts-list:hover {
-//   background-color: #b3bab7;
-//   color: black;
-// }
+
 .workout-label {
   font-size: 2.6em;
-  padding-top: 50px;
   padding-bottom: 20px;
+  padding-top: 50px;
 }
+
 .individualWorkout {
-  // padding: auto;
   color: white;
   display: flex;
   justify-content: center;
   font-size: 1.7em;
   font-weight: 600;
 }
+
 .individualWorkout:hover {
   text-decoration: none;
   color: black;

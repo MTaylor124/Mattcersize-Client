@@ -16,7 +16,7 @@ class About extends Component {
               <h1 className="about-header2">Mattcersize</h1>
             </div>
             <br/>
-            <h3 className="about-body mycentered">body</h3>
+            <h3 className="about-body mycentered">body...</h3>
             <h4 className="about-contact mycentered">contact</h4>
           </div>
         </div>

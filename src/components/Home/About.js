@@ -7,7 +7,7 @@ class About extends Component {
       <React.Fragment>
         <div className="about-all">
           <Button
-            href='/#'
+            href='/#/'
             className="about-back"
           >Back</Button><br/>
           <div className="about-page">

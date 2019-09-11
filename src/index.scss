@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main, .noExercises, .noWorkoutsFound, .show-about {
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main, .noExercises, .noWorkoutsFound, .show-about, .workout-label {
   display: flex;
   justify-content: center;
 }
@@ -15,6 +15,11 @@ body {
 //   background-color: #b3bab7;
 //   color: black;
 // }
+.workout-label {
+  font-size: 2.6em;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 .individualWorkout {
   // padding: auto;
   color: white;
@@ -37,9 +42,17 @@ body {
   padding-top: 70px;
   padding-bottom: 50px;
 }
-.workoutHeader {
+.workoutHeader, .workout-form-buttons {
   display: flex;
   justify-content: space-between;
+}
+.workout-submit, .workout-back, .auth-button {
+  color: black;
+  background: gray;
+  border: none;
+}
+.workout-submit:hover, .workout-back:hover, .auth-button:hover {
+  background: #494d4b;
 }
 .make-workout, .addExercise {
   color: white;

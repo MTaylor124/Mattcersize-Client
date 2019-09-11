@@ -40,7 +40,7 @@ class Workouts extends Component {
     }
 
     // let noWorkouts
-    if (this.state.workouts.length === 0) {
+    if (workoutsJSX.length === 0) {
       return (
         <React.Fragment>
           <h3 className="noWorkoutsFound">No workouts found</h3>

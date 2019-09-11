@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button'
 const checkforworkout = (workout) => {
   if (workout.name) {
     return (
-      <Button variant="danger" href={`#workouts/${workout._id}`}>
+      <Button className="workout-back" variant="danger" href={`#workouts/${workout._id}`}>
         Back to workout
       </Button>
     )
   } else {
     return (
-      <Button variant="danger" href={'#workouts/'}>
+      <Button className="workout-back" variant="danger" href={'#workouts/'}>
         Back to Workouts
       </Button>
     )
@@ -19,7 +19,9 @@ const checkforworkout = (workout) => {
 const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="name">
-      <Form.Label>Name of workout:</Form.Label>
+      <Form.Label
+        className="workout-label"
+      >Workout Name:</Form.Label>
       <Form.Control
         name="name"
         type="text"
@@ -29,10 +31,14 @@ const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
         required
       />
     </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-    {checkforworkout(workout)}
+    <div className="workout-form-buttons">
+      <Button
+        className="workout-submit"
+        variant="primary" type="submit">
+        Submit
+      </Button>
+      {checkforworkout(workout)}
+    </div>
   </Form>
 )
 

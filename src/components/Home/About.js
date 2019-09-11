@@ -14,6 +14,7 @@ class About extends Component {
             <div className="about-headers">
               <h2 className="about-header1">About</h2>
               <h1 className="about-header2">Mattcersize</h1>
+              <h6 className="mycentered">Version. 1.1.1</h6>
             </div>
             <br/>
             <h3 className="about-body mycentered">Mattcersize is a free to use workout tracker that allows you to stay on top of your exercise routine. New features coming soon!</h3>

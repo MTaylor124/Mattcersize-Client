@@ -18,6 +18,11 @@ const Home = props => {
       </React.Fragment>
     )
   }
+  const about = (
+    <React.Fragment>
+      <Button className="show-about" variant="outline-info" size="lg" href='#about/'>About</Button>
+    </React.Fragment>
+  )
   return (
     <React.Fragment>
       <br/>
@@ -29,6 +34,7 @@ const Home = props => {
       <br/>
       <br/>
       {seeWorkouts}
+      {about}
     </React.Fragment>
   )
 }

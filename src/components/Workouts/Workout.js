@@ -91,7 +91,9 @@ class Workout extends Component {
     if (workout) {
       const deletebutton = (
         <Fragment>
-          <Button variant="outline-danger" size="sm" onClick={this.handleDelete}> Delete Workout</Button>
+          <Button
+            className="delete-workout"
+            variant="outline-danger" size="sm" onClick={this.handleDelete}>Delete Workout</Button>
         </Fragment>
       )
       let updateExButton
@@ -120,16 +122,20 @@ class Workout extends Component {
                   href={'#workouts/'}>Back to Workouts</Button>
               </div>
               {(this.props.user && workout) && this.props.user._id === workout.owner
-                ? <Button variant="outline-info"
+                ? <Button
+                  className="edit-workout"
+                  variant="outline-info"
                   size="sm" href={`#workouts/${workout._id}/edit`}>Edit Workout Name</Button>
                 : ''
-              } -
+              }
               {(this.props.user && workout) && this.props.user._id === workout.owner
                 ? deletebutton
                 : ''
               }
               {this.state.workout.exercises.map(ex => (
-                <WorkoutExercise key={ex.name + ex._id}
+                <WorkoutExercise
+                  className="individual-exercise"
+                  key={ex.name + ex._id}
                   handleRefresh={this.handleRefresh}
                   user={this.props.user}
                   id={ex._id}
@@ -143,7 +149,7 @@ class Workout extends Component {
               <Button
                 className="addExercise"
                 variant="outline-primary"
-                href={`#workouts/${workout._id}/addexercise`}>add exercise</Button>
+                href={`#workouts/${workout._id}/addexercise`}>Add Exercise</Button>
               <br/>
             </Fragment>
           )}

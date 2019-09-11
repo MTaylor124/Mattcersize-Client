@@ -34,7 +34,9 @@ class Exercise extends Component {
     const { exercise } = this.state
     const deletebutton = (
       <Fragment>
-        <Button onClick={this.handleExerciseDelete}>Delete Exercise</Button>
+        <Button
+          className="delete-ex"
+          onClick={this.handleExerciseDelete}>Delete Exercise</Button>
       </Fragment>
     )
     return (
@@ -43,7 +45,9 @@ class Exercise extends Component {
           <Fragment>
             <h1>{exercise.name}</h1>
             {(this.props.user && exercise) && this.props.user._id === exercise.owner
-              ? <Button href={`#exercises/${exercise.id}/edit`}>Edit Exercise</Button>
+              ? <Button
+                className="edit-ex"
+                href={`#exercises/${exercise.id}/edit`}>Edit Exercise</Button>
               : ''
             }
             {(this.props.user && exercise) && this.props.user._id === exercise.owner

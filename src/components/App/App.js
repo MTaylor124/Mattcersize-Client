@@ -128,6 +128,8 @@ class App extends Component {
               <Home user={user} />
             )}
           />
+          <Route path='/about'
+          />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />

@@ -49,32 +49,32 @@ class WorkoutExercise extends React.Component {
     const { exercise } = this.state
     const deletebutton = (
       <React.Fragment>
-        <Button className="exerciseDeleteButton" onClick={this.handleExerciseDelete} variant="outline-danger" size="sm" >Delete</Button>
+        <Button className="exerciseDeleteButton" onClick={this.handleExerciseDelete} variant="outline-danger" size="sm">Delete<i className="fas fa-trash-alt"></i></Button>
       </React.Fragment>
     )
     if (exercise) {
       return (
         <React.Fragment>
           <br/>
-          <span className="exercisefields exerciseName">{this.state.exercise.name} </span>
-          <div className="setsreps">
-            <span className="exercisefields exsets"> {this.state.exercise.sets} x </span>
-            <span className="exercisefields exreps"> {this.state.exercise.reps} </span>
+          <div className="individual-exercise2">
+            <span className="exercisefields exerciseName">{this.state.exercise.name} </span>
+            <div className="setsreps">
+              <span className="exercisefields exsets"> {this.state.exercise.sets} x </span>
+              <span className="exercisefields exreps"> {this.state.exercise.reps} </span>
+            </div>
+            <div className="weightLine">
+              <br/>
+              <span className="exweightlabel">Weight:</span>
+              <span className="exercisefields exweight"> {this.state.exercise.weight}</span>
+              <br/>
+            </div>
+            <div className="flexButtons">
+              {exercise && <Button
+                className="updateExerciseButton"
+                variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">Edit Exercise</Button>}
+              {deletebutton}
+            </div>
           </div>
-          <div className="weightLine">
-            <br/>
-            <span className="exweightlabel">Weight:</span>
-            <span className="exercisefields exweight"> {this.state.exercise.weight}</span>
-            <br/>
-          </div>
-          <div className="lazyfix">Options:</div>
-          <div className="flexButtons">
-            {exercise && <Button
-              className="updateExerciseButton"
-              variant="outline-info" href={`#exercises/${exercise._id}/edit`} size="sm">edit</Button>}
-            {deletebutton}
-          </div>
-          <br/>
         </React.Fragment>
       )
     }

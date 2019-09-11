@@ -1,7 +1,21 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-
+const checkforworkout = (workout) => {
+  if (workout.name) {
+    return (
+      <Button variant="danger" href={`#workouts/${workout._id}`}>
+        Back to workout
+      </Button>
+    )
+  } else {
+    return (
+      <Button variant="danger" href={'#workouts/'}>
+        Back to Workouts
+      </Button>
+    )
+  }
+}
 const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="name">
@@ -15,13 +29,10 @@ const WorkoutForm = ({ workout, handleChange, handleSubmit }) => (
         required
       />
     </Form.Group>
-
     <Button variant="primary" type="submit">
       Submit
     </Button>
-    <Button variant="danger" href={`#workouts/${workout._id}`}>
-      Back
-    </Button>
+    {checkforworkout(workout)}
   </Form>
 )
 

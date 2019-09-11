@@ -1,6 +1,9 @@
+$primary: gray;
+$info: gray;
+$danger: gray;
 @import '~bootstrap/scss/bootstrap';
 
-.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main, .noExercises, .noWorkoutsFound, .show-about, .workout-label {
+.homepage-intro, .homepage-intro-sub, .see-workouts, .showworkoutsbutton, .addExercise, .homepage-main, .noExercises, .noWorkoutsFound, .show-about, .workout-label, .fancy-sign-in {
   display: flex;
   justify-content: center;
 }
@@ -53,6 +56,30 @@ body {
 }
 .workout-submit:hover, .workout-back:hover, .auth-button:hover {
   background: #494d4b;
+}
+.fancy-sign-in {
+  display: flex;
+  align-items: center;
+}
+.log-in-home {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  width: 57px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: none;
+  color: black;
+  align-items: center;
+}
+.log-in-home:hover {
+  background: gray;
+}
+.see-workouts {
+  padding: 0;
+  align-items: center;
 }
 .make-workout, .addExercise {
   color: white;

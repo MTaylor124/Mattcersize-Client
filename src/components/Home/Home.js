@@ -14,7 +14,10 @@ const Home = props => {
   } else {
     seeWorkouts = (
       <React.Fragment>
-        <p className="see-workouts">Log in to access your workouts.</p>
+        <div className="fancy-sign-in">
+          <Button href="#sign-in" className="see-workouts log-in-home">Log in </Button>
+          <span className="see-workouts">to access your workouts.</span>
+        </div>
       </React.Fragment>
     )
   }

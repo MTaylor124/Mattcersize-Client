@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubmit }) => (
   <Form onSubmit={handleExerciseSubmit}>
     <Form.Group controlId="name">
-      <Form.Label>Exercise:</Form.Label>
+      <Form.Label className="exform">Exercise:</Form.Label>
       <Form.Control
         name="name"
         type="text"
@@ -16,7 +16,7 @@ const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubm
       />
     </Form.Group>
     <Form.Group controlId="sets">
-      <Form.Label>Sets</Form.Label>
+      <Form.Label className="exform">Sets</Form.Label>
       <Form.Control
         name="sets"
         type="number"
@@ -25,7 +25,7 @@ const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubm
       />
     </Form.Group>
     <Form.Group controlId="reps">
-      <Form.Label>Reps</Form.Label>
+      <Form.Label className="exform">Reps</Form.Label>
       <Form.Control
         name="reps"
         type="number"
@@ -34,19 +34,21 @@ const ExerciseForm = ({ correctRoute, exercise, handleChange, handleExerciseSubm
       />
     </Form.Group>
     <Form.Group controlId="weight">
-      <Form.Label>Weight</Form.Label>
+      <Form.Label className="exform">Weight</Form.Label>
       <Form.Control
         name="weight"
         placeholder="Optional: Weight"
         onChange={handleChange}
       />
     </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-    <Button variant="danger" href={`#workouts/${correctRoute}`}>
-      Back
-    </Button>
+    <div className="exbuttons">
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+      <Button variant="danger" href={`#workouts/${correctRoute}`}>
+        Back
+      </Button>
+    </div>
   </Form>
 )
 

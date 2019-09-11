@@ -44,6 +44,14 @@ body {
 .about-header2 {
   margin-top: -15px;
 }
+.exbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+.exform {
+  font-size: 1.6em;
+  font-weight: 550;
+}
 .about-body {
 padding-top: 50px;
 padding-bottom: 60px;
